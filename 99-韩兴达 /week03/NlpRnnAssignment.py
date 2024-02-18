@@ -121,7 +121,7 @@ def main():
     batch_size = 20       #每次训练样本个数
     train_sample = 500    #每轮训练总共训练的样本总数
     char_dim = 20         #每个字的维度
-    sentence_length = 20   #样本文本长度
+    sentence_length = 15   #样本文本长度
     rnn_hidden_size = 50  #rnn隐藏层大小
     num_classification = sentence_length+1  #分类数
     learning_rate = 0.005 #学习率
@@ -168,7 +168,7 @@ def predict(model_path, vocab_path, input_strings):
     :return: 无返回
     '''
     char_dim = 20  # 每个字的维度
-    sentence_length = 20  # 样本文本长度
+    sentence_length = 15  # 样本文本长度
     num_classification = sentence_length + 1  # 分类数
     rnn_hidden_size = 50  # rnn隐藏层大小
     with open(vocab_path, 'r') as f:
@@ -190,10 +190,10 @@ if __name__ == "__main__":
 
     
     test_strings = [
-        "bcdefghijklmnopqrstu",
-        "bcdefghijklmnaopqrst",
-        "bcijklamnopqdefghrst",
-        "bbbbbbbbbbbbbbbbbade"
+        "defgijklmnpqrtu",
+        "bcfghijklmnaops",
+        "klamnoqdefghrst",
+        "bbbbbbbbbbbbade"
     ]
     
     predict("model.pth", "vocab.json", test_strings)
